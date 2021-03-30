@@ -163,9 +163,11 @@ func isUsefulLabel(mType metricspb.MetricDescriptor_Type, labelKey string) bool 
 	switch labelKey {
 	case model.MetricNameLabel:
 	case model.InstanceLabel:
+		result = true
 	case model.SchemeLabel:
 	case model.MetricsPathLabel:
 	case model.JobLabel:
+		result = true
 	case model.BucketLabel:
 		result = mType != metricspb.MetricDescriptor_GAUGE_DISTRIBUTION &&
 			mType != metricspb.MetricDescriptor_CUMULATIVE_DISTRIBUTION
